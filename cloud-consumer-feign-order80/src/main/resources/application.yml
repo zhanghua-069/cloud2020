@@ -1,0 +1,19 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka, http://eureka7003.com:7003/eureka
+ribbon:
+  # 建立连接超时时间，单位ms
+  ReadTimeout:  5000
+  # 获取资源超时时间，单位ms
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    #设置feign日志监控对象的日志输出级别
+    com.fleexy.springcloud.service.PaymentFeignService: debug
